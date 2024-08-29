@@ -12,7 +12,7 @@ export const Hero = () => {
               UF Ultimate Frisbee
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-              The official website the University of Florida's Club Ultimate Frisbee Team
+              The official website of the University of Florida's Club Ultimate Frisbee Team
             </p>
 
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
