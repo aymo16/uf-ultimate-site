@@ -9,11 +9,6 @@ interface BenefitsProps {
     title: string;
     desc: string;
     image: any;
-    bullets: {
-      title: string;
-      desc: string;
-      icon: React.ReactNode;
-    }[];
   };
 }
 export const Benefits = (props: Readonly<BenefitsProps>) => {
@@ -50,14 +45,6 @@ export const Benefits = (props: Readonly<BenefitsProps>) => {
               <p className="max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl dark:text-gray-300">
                 {data.desc}
               </p>
-            </div>
-
-            <div className="w-full mt-5">
-              {data.bullets.map((item, index) => (
-                <Benefit key={index} title={item.title} icon={item.icon}>
-                  {item.desc}
-                </Benefit>
-              ))}
             </div>
           </div>
         </div>
