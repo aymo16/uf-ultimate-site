@@ -18,7 +18,7 @@ export const Faq = () => {
                     <ChevronUpIcon
                       className={`${
                         open ? "transform rotate-180" : ""
-                      } w-5 h-5 text-indigo-500`}
+                      } w-5 h-5 text-blue-800`}
                     />
                   </DisclosureButton>
                   <DisclosurePanel className="px-4 pt-4 pb-2 text-gray-500 dark:text-gray-300">
@@ -36,21 +36,16 @@ export const Faq = () => {
 
 const faqdata = [
   {
-    question: "Is this template completely free to use?",
-    answer: "Yes, this template is completely free to use.",
+    question: "Can anyone join UF Ultimate Frisbee?",
+    answer: "Yes! UF Ultimate Frisbee is open to all students at the University of Florida, regardless of experience level. We welcome beginners as well as experienced players. If you're interested, come to one of our practices or reach out to us for more information.",
   },
   {
-    question: "Can I use it in a commercial project?",
-    answer: "Yes, this you can.",
+    question: "Where and when are practices?",
+    answer: "Fall 2024 Practice Schedule: Tuesday 6-8 PM at Lake Alice and Thursday 8-10 PM at Maguire Field. Be sure to bring water and cleats!",
   },
   {
-    question: "What is your refund policy? ",
-    answer:
-      "If you're unhappy with your purchase for any reason, email us within 90 days and we'll refund you in full, no questions asked.",
-  },
-  {
-    question: "Do you offer technical support? ",
-    answer:
-      "No, we don't offer technical support for free downloads. Please purchase a support plan to get 6 months of support.",
+    question: "How can I get involved if I’m new to Ultimate Frisbee?",
+    answer: "If you're new to Ultimate Frisbee, don't worry! Our team is very beginner-friendly, and we regularly teach new players the basics of the game. Just show up to practice, and our experienced players and coaches will help you get started.",
   },
 ];
+
