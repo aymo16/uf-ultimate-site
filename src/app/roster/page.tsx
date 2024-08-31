@@ -1,7 +1,7 @@
 import { Container } from "@/components/Container";
 
 export default function Home() {
-  const rosterData = [
+  const A_TeamData = [
     { name: "Garrison Reed", isCaptain: true },
     { name: "Logan Diehl", isCaptain: true },
     { name: "Ari Siegel" },
@@ -26,34 +26,139 @@ export default function Home() {
     { name: "Trevor Kirkland", isRookie: true },
   ];
 
+  const B_TeamData = [
+    // Captains
+    { name: "Andrew Cory", isCaptain: true, isRookie: true },
+    { name: "Lucas Rudloff", isCaptain: true },
+    { name: "Sam Williams", isCaptain: true, isRookie: true },
+    { name: "Tyler Rogers", isCaptain: true, isRookie: true },
+  
+    // Regular Players
+    { name: "Abdiel Rosario" },
+    { name: "Aiden DeTurris" },
+    { name: "Ben Schreibman" },
+    { name: "Caio Rudloff" },
+    { name: "Carson Roland" },
+    { name: "Drew Wright" },
+    { name: "Howard Le" },
+    { name: "Jack Lawhorne" },
+    { name: "Jose Bolanos" },
+    { name: "Justin Galin" },
+    { name: "Kyle Stromberg" },
+    { name: "Luke Gutierrez" },
+    { name: "Riley Colquitt" },
+  
+    // Rookies
+    { name: "Austin VanLoon", isRookie: true },
+    { name: "Brayden Przekwas", isRookie: true },
+    { name: "Brooks Caldwell", isRookie: true },
+    { name: "Christian Hays", isRookie: true },
+    { name: "Eric Sung", isRookie: true },
+    { name: "Gilon Kravatsky", isRookie: true },
+    { name: "Johnny Huynh", isRookie: true },
+    { name: "Jon Lee", isRookie: true },
+    { name: "Joey Oliver", isRookie: true },
+  ];
+  
+
 
   return (
     <Container className="py-8 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-gray-100 mb-6">
-        Florida Men's Club Ultimate - 2023-24 Roster
+      {/* A Team Section */}
+      <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-gray-100 mb-10">
+        2023-24 A-Team Roster
       </h2>
-      <ul className="list-none space-y-2">
-        {rosterData.map((player) => (
-          <li
-            key={player.name}
-            className={`flex items-center text-gray-900 dark:text-gray-200`}
-          >
-            <div className="flex flex-row items-baseline gap-2">
-              <div className={`flex ${player.isCaptain ? 'font-semibold text-blue-700 dark:text-blue-300' : ''} ${player.isRookie ? '' : ''}`}>
-                {player.name}
-              </div>
-              <div className="flex flex-col text-sm">
-                {player.isCaptain && (
-                  <span className="text-blue-600 dark:text-blue-400">(Captain)</span>
-                )}
-                {player.isRookie && !player.isCaptain && (
-                  <span className="text-yellow-600 dark:text-yellow-400">(Rookie)</span>
-                )}
-              </div>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <div className="flex justify-center ">
+        <div className="grid grid-cols-1 text-center max-w-4xl w-full md:grid-cols-3 gap-10">
+          <div>
+            <h3 className="font-semibold text-lg text-blue-700 mb-4">
+              Captains
+            </h3>
+            <ul className="list-none space-y-2">
+              {A_TeamData.filter(player => player.isCaptain).sort((a, b) => a.name.localeCompare(b.name)).map(player => (
+                <li key={player.name} className="text-gray-900 dark:text-gray-200">
+                  {player.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-500 mb-4">
+              Veterans
+            </h3>
+            <ul className="list-none space-y-2">
+              {A_TeamData.filter(player => !player.isCaptain && !player.isRookie).sort((a, b) => a.name.localeCompare(b.name)).map(player => (
+                <li key={player.name} className="text-gray-900 dark:text-gray-200">
+                  {player.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg text-orange-700 mb-4">
+              Rookies
+            </h3>
+            <ul className="list-none space-y-2">
+              {A_TeamData.filter(player => player.isRookie && !player.isCaptain).sort((a, b) => a.name.localeCompare(b.name)).map(player => (
+                <li key={player.name} className="text-gray-900 dark:text-gray-200">
+                  {player.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+  
+      {/* Spacing between the sections */}
+      <div className="py-8"></div>
+  
+      {/* B Team Section */}
+      <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-gray-100 mb-10">
+        2023-24 B-Team Roster
+      </h2>
+      <div className="flex justify-center">
+        <div className="grid grid-cols-1 text-center max-w-4xl w-full md:grid-cols-3 gap-10">
+          <div>
+            <h3 className="font-semibold text-lg text-blue-700 mb-4">
+              Captains
+            </h3>
+            <ul className="list-none space-y-2">
+              {B_TeamData.filter(player => player.isCaptain).sort((a, b) => a.name.localeCompare(b.name)).map(player => (
+                <li key={player.name} className="text-gray-900 dark:text-gray-200">
+                  {player.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg text-gray-900 dark:text-gray-500 mb-4">
+              Veterans
+            </h3>
+            <ul className="list-none space-y-2">
+              {B_TeamData.filter(player => !player.isCaptain && !player.isRookie).sort((a, b) => a.name.localeCompare(b.name)).map(player => (
+                <li key={player.name} className="text-gray-900 dark:text-gray-200">
+                  {player.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg text-orange-700 mb-4">
+              Rookies
+            </h3>
+            <ul className="list-none space-y-2">
+              {B_TeamData.filter(player => player.isRookie && !player.isCaptain).sort((a, b) => a.name.localeCompare(b.name)).map(player => (
+                <li key={player.name} className="text-gray-900 dark:text-gray-200">
+                  {player.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
     </Container>
   );
+  
+  
 }
